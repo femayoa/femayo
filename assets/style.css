@@ -1,0 +1,406 @@
+/****************************************
+* style.css
+* 
+* This file contains presentational features for 
+* index.html file that serves as the homepage for 
+* InstaReliev
+*
+* Timothy Kay 
+******************************************/
+
+:root {
+  --dark-color: black;
+  --primary-color: rgba(218, 165, 32, 0.8);
+  --source-color: #fff;
+
+  /* cubic beziers */
+  --cubic-bezier: cubic-bezier(.8, .5, .7, .6);
+
+  /* filters */
+  --image-brightness: drop-shadow(1px 1px goldenrod) opacity(1);
+  --text-brightness: brightness(150%) opacity(1);
+  --alpha-filter: brightness(50%) opacity(1);
+
+  /* spacing - margin */
+  --alpha-margin: 5px 0;
+  --service-margin: 10px;
+  --nav-margin: 0 10px;
+  --input-margin: 20px 0;
+  --section-margin: 150px 0;
+
+  /* spacing - padding */
+  --input-padding: 5px;
+  --section-padding: 40px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  font-stretch: ultra-expanded;
+  src: url('../webfonts/Ubuntu-Light.ttf');
+}
+
+body {
+  font-family: Ubuntu;
+}
+
+body section {
+  margin: var(--section-margin);
+}
+
+h2 {
+  font-size: x-large;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+a:hover {
+  filter: var(--alpha-filter);
+}
+
+div.wrapper {
+  margin: 10px 20px;
+}
+
+header * {
+  color: var(--source-color);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5rem;
+  background: goldenrod;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+header.scroll {
+  position: fixed;
+  top: -7rem;
+  left: 0;
+  width: 100%;
+  height: 3.5rem;
+  background: goldenrod;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.align::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: white;
+  transition: width 0.3s;
+}
+
+.align:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+.logo {
+  position: absolute;
+  left: 10%;
+  bottom: 0.9rem;
+  font-size: 1.5rem;
+}
+
+
+
+nav ul li {
+  display: flex;
+}
+
+nav ul li a {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+nav ul li a::after,
+.footer-head a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: rgb(212, 4, 4);
+  transition: width 0.3s;
+}
+
+nav ul li a:hover::after,
+.footer-head a:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+/* contents */
+.beginning * {
+  color: var(--source-color);
+}
+
+.beginning {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.603), rgba(0, 0, 0, 0.61)), url('../images/cityscape.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+  font-weight: bold;
+}
+
+.welcome * {
+  display: inline-block;
+
+}
+
+.welcome {
+  padding: var(--section-padding);
+}
+
+.message {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bolder;
+  display: block;
+  margin: 150px auto;
+  white-space: normal;
+  font-variant: small-caps;
+  letter-spacing: 1.5px;
+}
+
+.underline {
+  margin: 10px 0;
+}
+
+.underline a {
+  color: goldenrod;
+  text-decoration: underline;
+}
+
+.underline a:hover {
+  filter: none;
+  color: var(--source-color);
+}
+
+
+/* hero section */
+
+.hero-section * {
+  color: black;
+}
+
+.hero-section {
+  padding: var(--section-padding);
+  /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0.26), rgba(236, 232, 232, 0.918)), url('images/cityscape.jpg');
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken; */
+  margin: var(--section-margin);
+  display: table;
+}
+
+.hero-section>h2 {
+  display: table-caption;
+  padding: 0 40px;
+}
+
+.hero-section div {
+  padding: var(--input-padding);
+  display: table-cell;
+  vertical-align: top;
+}
+
+.hero-section div>a {
+  color: var(--source-color);
+}
+
+
+.welcome {
+  animation-name: fade;
+  animation-duration: .5s;
+}
+
+.right {
+  animation-name: reverse;
+  animation-duration: .5s;
+}
+
+@keyframes fade {
+  0% {
+    filter: var(--animation-filter2);
+    transform: translate(-400px);
+  }
+}
+
+@keyframes reverse {
+  0% {
+    filter: var(--animation-filter2);
+    transform: translate(400px);
+  }
+}
+
+/* about section */
+.about {
+  background-image: linear-gradient(to right, rgba(36, 34, 34, .5), rgba(58, 48, 48, .8)), url('../images/gear.png');
+  background-position: bottom;
+  /* when screen is wider than 600px, position should go to center */
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: var(--section-padding);
+  font-size: 20px;
+}
+
+.about *,
+.team * {
+  margin: var(--input-margin);
+  color: var(--source-color);
+  padding: var(--input-padding);
+}
+
+section a {
+  background-color: rgb(212, 4, 4);
+  padding: var(--input-padding);
+  border-radius: 10px;
+  box-shadow: 1.5px 1.5px 5px rgba(0, 0, 0, 0.603);
+  color: white;
+}
+
+section a:hover {
+  background-color: goldenrod;
+  filter: none;
+}
+
+/* story */
+.story img {
+  width: 80%;
+  height: 80%;
+}
+
+/* team section */
+.team {
+  background-image: linear-gradient(to right, rgba(36, 34, 34, .5), rgba(58, 48, 48, .8)), url('../images/airJump.png');
+  background-size: contain;
+  background-position: bottom;
+  padding: var(--section-padding);
+  text-align: center;
+  height: 200px;
+}
+
+/* footer */
+.footer {
+  background-color: goldenrod;
+  color: white;
+  text-align: left;
+  padding: 5px;
+}
+
+.footer * {
+  font-size: small;
+}
+
+.footer-head>span *,
+.footer-foot>span {
+  display: block;
+}
+
+.footer-head>span a {
+  color: white;
+  margin: 5px 0;
+}
+
+.footer>span:nth-of-type(1) {
+  text-align: center;
+}
+
+.footer>span:nth-of-type(1) i {
+  border-radius: 50%;
+  background-color: rgb(212, 4, 4);
+  display: inline;
+  padding: 5px 8px;
+  font-size: large;
+}
+
+.footer>span:nth-of-type(1) a {
+  margin: var(--input-margin);
+}
+
+.footer-head>span h5 {
+  margin: 10px 0;
+  font-size: small;
+  color: rgb(212, 4, 4);
+}
+
+.footer hr {
+  margin: 0 auto;
+  width: 70%;
+  border: 1px dashed white;
+  /* remember than an horizontal rule is presented like a line but
+    it is actually built using the border property. Therefore to
+    change it color value, the border property is pre-appended to its
+    color value. 
+  */
+}
+
+.footer-head {
+  display: table;
+  border-spacing: 20px 10px;
+  margin: 2px auto;
+  padding: 5px 0;
+}
+
+.footer-head>span {
+  display: table-cell;
+  padding: 0 20px;
+  font-size: small;
+}
+
+.footer-foot {
+  background-color: rgb(212, 4, 4);
+  display: block;
+  padding: 5px;
+  position: relative;
+}
+
+.footer .arrow a:hover::after {
+  width: 0;
+}
+
+.footer-foot>span {
+  text-align: center;
+  font-size: small;
+  margin: 15px 0 0;
+}
+
+
+.footer-foot>span:nth-of-type(2) {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.footer-foot>span:nth-of-type(2) a {
+  border-radius: 50%;
+  background-color: goldenrod;
+  padding: 0 10px;
+  font-size: x-large;
+  color: white;
+}
+
+.footer-foot>span:first-child {
+  display: none;
+}

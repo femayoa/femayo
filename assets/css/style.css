@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Core styles */
+a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Header */
+header {
+  background: linear-gradient(var(--linear-gradient), var(--linear-gradient)),
+    url('../img/femayo-global.jpg') no-repeat center center/cover;
+  height: 100vh;
+}
+
+/* navbar */
+header div#nav-menu {
+  background: var(--dark-transparent);
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0px;
+  padding: 0 30px;
+  transition: 0.5s;
+}
+
+header div.top {
+    background: transparent;
+}
+
+header li {
+  margin: 0 5px;
+  padding: 2px;
+}
+
+header nav a.active {
+  border-bottom: 2px solid var(--active-color);
+}
+
+header nav a:hover {
+  border-bottom: 2px solid var(--support-color);
+}
+
+header .hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 80vh;
+  color: var(--main-color);
+  transition: all .4s ease-in;
+}
+
+header .hero-content h1 {
+  font-size: 2em;
+  color: var(--support-color);
+  margin-top: 200px;
+}
+
+header .hero-content p {
+  font-size: 1.2em;
+}
+
+header .hero-content a {
+  margin-top: 55px;
+}
+
+/* Home section */
+#home-b .logo {
+  background: url('../img/femayo.jpg') no-repeat center center/cover;
+  height: 100%;
+  width: 100%;
+  grid-area: 'logo';
+}
+
+#home-b #about {
+  background: var(--dark-gray);
+  grid-area: 'about';
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0 50px;
+  color: var(--main-color);
+}
+
+#home-b #about a {
+  padding: 0 20px;
+}
+
+
+#home-c .logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+
+.Oj-First,
+.Reliev,
+.Toaks {
+  display: none;
+}
+
+#home-c .founders {
+  position: relative;
+  /* border: 2px solid red; */
+}
+
+#home-c .logo1:hover::before,
+#home-c .logo2:hover::before,
+#home-c .logo3:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--dark-gray);
+  transition: all .5s ease-in-out;
+}
+
+#home-c .logo1:hover .Oj-First,
+#home-c .logo2:hover .Reliev,
+#home-c .logo3:hover .Toaks {
+  display: grid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--main-color);
+}
+
+.Oj-First,
+.Reliev,
+.Toaks {
+  padding: 20px;
+}
+
+
+#home- header .hero-content *,
+.lead *,
+#about *,
+.flex-column * {
+  margin: 10px 0;
+}
+
+
+/* Section D Testimonials */
+#home-d {
+  text-align: center;
+  background-color: var(--dark-transparent);
+  color: var(--main-color);
+}
+
+#home-d h2 {
+  font-size: 2.5rem;
+  padding: 2rem 0;
+}
+
+#home-d p {
+  font-size: 0.9em;
+}
+
+#home-d .testimonials {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: var(--dark-gray);
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px 1px var(--light-gray);
+}
+
+#home-d .container img {
+  width: 200px;
+}
+
+#home-d .testimonial {
+  width: 50%;
+}
+
+#home-d .view-all-testimonials {
+  padding: 2rem 0;
+}
+
+/* Section E/Contact form */
+
+#contact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#contact .bg-img {
+  background: linear-gradient(var(--linear-gradient), var(--linear-gradient)), 
+  url(../img/femayo-global.jpg) no-repeat center center/cover;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#contact .bg-img h2 {
+  color: var(--main-color);
+  font-size: 2.5rem;
+}
+
+
+#contact .contact-form {
+  padding: 2rem 2rem;
+  background-color: var(--dark-gray);
+  color: var(--main-color);
+}
+
+#contact .contact-form label,
+#contact .contact-form input,
+#contact .contact-form textarea {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+}
+
+#contact .contact-form input,
+#contact .contact-form textarea{
+  padding: .5rem;
+  margin-bottom: .6rem;
+  outline: none;
+}
+
+/* Validating form input */
+#contact .contact-form input:focus:invalid,
+#contact .contact-form textarea:focus:invalid{
+  border: 1px solid red;
+}
+
+#contact .contact-form input:focus:valid,
+#contact .contact-form textarea:focus:valid{
+  border: 1px solid green
+}
+
+#contact #validation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* footer */
+
+#main-footer{
+  background: var(--dark-transparent);
+  color: var(--main-color);
+}
+
+#main-footer .container-social-media {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+#main-footer .container-social-media .logo img {
+  width: 25%;
+  margin-left: auto;
+}
+
+#main-footer .container-social-media .fab {
+  display: inline;
+  margin: 0 .3rem;
+  color: var(--main-color);
+}
+
+#main-footer .container-social-media .contact-info {
+  line-height: 2;
+  text-align: left;
+}
+
+#main-footer .container-social-media .contact-info p {
+  border-bottom: 1px dotted #999;
+}
+#main-footer .container .copyright {
+  text-align: center;
+  margin: 1.56rem 0;
+}
